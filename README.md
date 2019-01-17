@@ -1,4 +1,7 @@
 # EBOWLA
+Todo list:
+-Automation script for generate payload with one command line
+
 
 VERSION Modified, this version will not work on any other set up, if you want to make a copy for your own usage look the Scripts repo and the version manager, in the script build_x64.sh and build_x86.sh i use go1.7 because new version of go dont support some old go flags like you will see in this readme. This go1.7 is a symlink of the go-1.7/bin/go. feel free to make issue but i dont promess any help since it is for my own usage.
 I also change the default usage of ebowla and make the hidden parameter as default
