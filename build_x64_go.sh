@@ -23,10 +23,10 @@ cd /tmp/
 
 echo [*] Building...
 
-if [[ $3 == --hidden ]]; then
- export GOROOT=/home/rl1k/bin/go-1.7;export GOPATH=/home/rl1k/bin/go;export PATH=$PATH:$GOROOT/bin:$GOPATH:$HOME/bin/go-1.7/bin:$HOME/bin/go-1.10/bin;export GOOS=windows; export GOARCH=amd64; export CGO_ENABLED=1; export CXX=x86_64-w64-mingw32-g++; export CC=x86_64-w64-mingw32-gcc CXX=x86_64-w64-mingw32-g++; CC=x86_64-w64-mingw32-gcc; CGO_LDFLAGS="-g -lm" GOGCCFLAGS="-m64 -fmessage-length=0" CGO_ENABLED=1 GOOS=windows GOARCH=amd64 go1.7 build -ldflags -H=windowsgui /tmp/$sans_extension.go 
-else
+if [[ $3 == --nohidden ]]; then
 	export GOROOT=/home/rl1k/bin/go-1.7;export GOPATH=/home/rl1k/bin/go;export PATH=$PATH:$GOROOT/bin:$GOPATH:$HOME/bin/go-1.7/bin:$HOME/bin/go-1.10/bin;export GOOS=windows; export GOARCH=amd64; export CGO_ENABLED=1; export CXX=x86_64-w64-mingw32-g++; export CC=x86_64-w64-mingw32-gcc CXX=x86_64-w64-mingw32-g++; CC=x86_64-w64-mingw32-gcc; CGO_LDFLAGS="-g -lm" GOGCCFLAGS="-m64 -fmessage-length=0" CGO_ENABLED=1 GOOS=windows GOARCH=amd64 go1.7 build /tmp/$sans_extension.go
+else
+ export GOROOT=/home/rl1k/bin/go-1.7;export GOPATH=/home/rl1k/bin/go;export PATH=$PATH:$GOROOT/bin:$GOPATH:$HOME/bin/go-1.7/bin:$HOME/bin/go-1.10/bin;export GOOS=windows; export GOARCH=amd64; export CGO_ENABLED=1; export CXX=x86_64-w64-mingw32-g++; export CC=x86_64-w64-mingw32-gcc CXX=x86_64-w64-mingw32-g++; CC=x86_64-w64-mingw32-gcc; CGO_LDFLAGS="-g -lm" GOGCCFLAGS="-m64 -fmessage-length=0" CGO_ENABLED=1 GOOS=windows GOARCH=amd64 go1.7 build -ldflags -H=windowsgui /tmp/$sans_extension.go 
 fi
 echo [*] Building complete
 
