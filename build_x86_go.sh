@@ -23,11 +23,9 @@ cd /tmp/
 echo [*] Building...
 
 if [[ $3 == --hidden ]]; then
-	export GOOS=windows; export GOARCH=386; export CGO_ENABLED=1; export CXX=i686-w64-mingw32-g++; export CC=i686-w64-mingw32-gcc
-	GOOS=windows; CXX=i686-w64-mingw32-g++; CC=i686-w64-mingw32-gcc; GCCFLAGS="-m32 -fmessage-length=0" CGO_ENABLED=1 GOOS=windows GOARCH=386 go build -ldflags -H=windowsgui $sans_extension.go 
+export GOROOT=/home/rl1k/bin/go-1.7;export GOPATH=/home/rl1k/bin/go;export PATH=$PATH:$GOROOT/bin:$GOPATH:$HOME/bin/go-1.7/bin:$HOME/bin/go-1.10/bin;export GOOS=windows; export GOARCH=386; export CGO_ENABLED=1; export CXX=i686-w64-mingw32-g++; export CC=i686-w64-mingw32-gcc GOOS=windows; CXX=i686-w64-mingw32-g++; CC=i686-w64-mingw32-gcc; GCCFLAGS="-m32 -fmessage-length=0" CGO_ENABLED=1 GOOS=windows GOARCH=386 go build -ldflags -H=windowsgui $sans_extension.go 
 else
-	export GOOS=windows; export GOARCH=386; export CGO_ENABLED=1; export CXX=i686-w64-mingw32-g++; export CC=i686-w64-mingw32-gcc
-	GOOS=windows; CXX=i686-w64-mingw32-g++; CC=i686-w64-mingw32-gcc; GCCFLAGS="-m32 -fmessage-length=0" CGO_ENABLED=1 GOOS=windows GOARCH=386 go build $sans_extension.go 
+	export GOROOT=/home/rl1k/bin/go-1.7;export GOPATH=/home/rl1k/bin/go;export PATH=$PATH:$GOROOT/bin:$GOPATH:$HOME/bin/go-1.7/bin:$HOME/bin/go-1.10/bin;export GOOS=windows; export GOARCH=386; export CGO_ENABLED=1; export CXX=i686-w64-mingw32-g++; export CC=i686-w64-mingw32-gcc GOOS=windows; CXX=i686-w64-mingw32-g++; CC=i686-w64-mingw32-gcc; GCCFLAGS="-m32 -fmessage-length=0" CGO_ENABLED=1 GOOS=windows GOARCH=386 go build $sans_extension.go 
 fi
 
 echo [*] Building complete
