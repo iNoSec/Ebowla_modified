@@ -14,8 +14,8 @@ elif [[ -z $1 || -z $2 ]]; then
 else
     read -p "Set the path to Ebowla directory (default: /pentest/av-bypass/Ebowla): " ebowla
 
-if [ ! $ebowla ]; then
-    cd /pentest/av-bypass/Ebowla_perso/
+if [ -z $ebowla ]; then
+    cd /pentest/av-bypass/Ebowla/
 else
     cd "$ebowla"
 fi
