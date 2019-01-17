@@ -9,7 +9,7 @@ help_banner=$(echo "Usage : sudo ./ebowla payload_to_encode.exe output_encoded.e
 
 if [[ $1 == -h || $1 == --help ]];then
     echo $help_banner
-elif [[ !$1 && !$2 ]]; then
+elif [[ -z $1 || -z $2 ]]; then
     echo $help_banner
 else
     read -p "Set the path to Ebowla directory (default: /pentest/av-bypass/Ebowla): " ebowla
@@ -32,23 +32,25 @@ read -p "Do you want to configure the genetic.config file ? [Y/n]: " genetic
     fi
         
 read -p "Configure the arch of your payload [x86/x64] :" arch
-        if [[ $arch == x64 && !$3 ]]; then
+        if [[ $arch == x64 && -z $3 ]]; then
             sudo ./ebowla.py $1 genetic.config;
             sudo ./build_x64_go.sh output/go_symmetric_$filename1.go $2;
             echo "Job done! All have been saved under $ebowla/output directory"
             exit 1;
-        elif [[ $arch == x86 && !$3 ]];then
+        elif [[ $arch == x86 && -z $3 ]];then
             sudo ./ebowla.py $1 genetic.config;
             sudo ./build_x86_go.sh output/go_symmetric_$filename1.go $2;
             echo "Job done! All have been saved under $ebowla/output directory"
             exit 1;
         elif [[ $arch == x64 && $3 == --nohidden ]]; then
             sudo ./ebowla.py $1 genetic.config;
+            echo "--nohidden detected"
             sudo ./build_x64_go.sh output/go_symmetric_$filename1.go $2 $3; 
             echo "Job done! All have been saved under $ebowla/output directory"
             exit 1;
         elif [[ $arch == x86 && $3 == --nohidden ]];then
             sudo ./ebowla.py $1 genetic.config;
+            echo "--nohidden detected"
             sudo ./build_x86_go.sh output/go_symmetric_$filename1.go $2 $3; 
             echo "Job done! All have been saved under $ebowla/output directory"
             exit 1;
