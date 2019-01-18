@@ -1,8 +1,6 @@
 #!/bin/bash
-# Futur addition generate msfvenom payload but i will make an other project for that so stay tuned
-#read -p "Do you want to generate a metasploit payload [Y/n]" msf_choice
-#    if [[ $msf_choice == Y || $msf_choice == y ]];then
-#      curl -k -L "https://raw.githubusercontent.com/g0tmi1k/mpc/master/msfpc.sh" > /tmp/msfpc.sh && sudo mv /tmp/msfpc.sh /usr/local/bin && sudo chmod +x /usr/bin/msfpc.sh;
+# Script written by rl1k 
+# https://github.com/iNoSec
 
 
 help_banner=$(echo "Usage : sudo ./ebowla payload_to_encode.exe output_encoded.exe [Optional argument: --nohidden]")
